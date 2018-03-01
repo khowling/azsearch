@@ -62,7 +62,7 @@ export default class SearchUI extends Component {
     search () {
         console.log (`search: selected_facets: ${JSON.stringify(this.state.selected_facets)}`)
         let filter = Object.keys(this.state.selected_facets).map(fn => 
-            this.state.selected_facets[fn].map(val => encodeURIComponent(`${fn} eq '${val}'`)).join(' or ')
+            this.state.selected_facets[fn].map(val => encodeURIComponent(`${fn} eq ${isNaN(val)? "'":""}${val}${isNaN(val)? "'":""}`)).join(' or ')
         ).join(') and (') 
 
         if (filter)  {

@@ -3,14 +3,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Azure Search React App
 
-Create  App can generate a web based facet'ed search experiance powered by Azure Search,  you need to configure it to work against your Azure Search Index using the environment variable `REACT_APP_SEARCH_METADATA`:
+React App that provides a web based facet'ed search experiance powered by Azure Search,  you will just need to configure it to work against your Azure Search Index using the environment variable `REACT_APP_SEARCH_METADATA`
 
+## Setup Azure Search
+
+Create your Azure Search service in the Azure portal (plenty of guides here), then create your index (again, many guides).
+!IMPORTANT! be sure to configure CORS on your index for this to work
 
 ## Configure the app
 
 Once you have created your Asure Search Index, you can clone this app locally, and configure it to run against your index
 
 ### Step 1 - create your `REACT_APP_SEARCH_METADATA` environment variable
+
+NOTE: If you are using the realestate Sample index from the Azure portal, I have included a file called `realestate.ps1`, that matches to the Sample Index, you just need to fill in your `seach_apikey` & `search_url` & `index`.  If you have a different index, read on...
 
 This environment variable containes all the metadata the app needs to run, you can create a `ENV.sh` or `ENV.ps1` that will set this as follows:
 
